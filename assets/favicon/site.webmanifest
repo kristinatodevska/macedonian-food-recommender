@@ -1,0 +1,14 @@
+{
+    "name": "Macedonian Food Recommender",
+    "short_name": "Macedonian Food Recommender",
+    "icons": [
+        {
+            "src": "/assets/favicon/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#addd7f",
+    "background_color": "#addd7f",
+    "display": "standalone"
+}

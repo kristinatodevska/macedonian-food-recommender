@@ -1,0 +1,580 @@
+/* Kristina Todevska */
+/* Uppgift 5 Projekt */
+/* 2024-08-09 */
+
+/* VARIABLES ========================================================================== */
+:root {
+    /* Colors */
+    --green-dark: #11270B;
+    --green-moss: #3C5A14;
+    --green-kelly: #71B340;
+    --green-avocado: #6AA735;
+    --green-pistachio: #ADDD7F;
+
+    /* Sizes */
+    --size-4: 4px;
+    --size-8: 8px;
+    --size-16: 16px;
+    --size-32: 32px;
+}
+
+/* BASE ========================================================================== */
+html {
+    /* This makes it so that 1rem will be rendered as 10px */
+    font-size: 62.5%;
+}
+
+body {
+    /* Open Sans is loaded from Google Fonts */
+    /* I did not host it myself since it's better for pagespeed to use it directly from Google Fonts and the probability of Google Fonts not being available is very low */
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, sans-serif;
+    background: var(--green-pistachio);
+    color: black;;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+#startpage {
+    background-image:
+    linear-gradient(to top,rgba(11,11,12,0.43) 0%, var(--green-pistachio) 100%), 
+        url(../img/startpage.jpg);
+}
+
+#find-recipe {
+    background-image:
+    linear-gradient(to top,rgba(11,11,12,0.43) 0%, var(--green-pistachio) 100%), 
+        url(../img/find-recipe.jpg);
+}
+
+#about-us {
+    background-image:
+    linear-gradient(to top,rgba(11,11,12,0.43) 0%, var(--green-pistachio) 100%), 
+        url(../img/about-us.jpg);
+}
+
+#north-macedonia {
+    background-image:
+    linear-gradient(to top,rgba(11,11,12,0.43) 0%, var(--green-pistachio) 100%), 
+        url(../img/north-macedonia.jpg);
+}
+
+#contact-us {
+    background-image:
+    linear-gradient(to top,rgba(11,11,12,0.43) 0%, var(--green-pistachio) 100%), 
+        url(../img/contact-us.jpg);
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+a {
+    color: var(--green-dark);
+    text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+hr {
+    border: 1px solid var(--green-kelly);
+    margin: var(--size-16) 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* HEADER ========================================================================== */
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 var(--size-8);
+    background-color: var(--green-dark);
+    text-align: center;
+}
+
+header a.header {
+    display: flex;
+    flex-direction: column;
+}
+
+header img {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: var(--size-8);
+}
+
+header p {
+    margin: 0;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--green-pistachio);
+    margin-bottom: var(--size-16);
+}
+
+/* MAIN MENU ========================================================================== */
+#main-menu {
+    background-color: var(--green-dark);
+}
+
+#main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#main-menu li {
+    margin: 0;
+}
+
+#main-menu a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: var(--size-16) var(--size-8);
+    transition: background-color 0.25s ease-in-out;
+}
+
+#main-menu a:hover,
+#main-menu .active {
+    background-color: var(--green-avocado);
+    color: black;
+}
+
+/* MAIN ========================================================================== */
+main {
+    padding: var(--size-32);
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* RECIPES SPECIFIC ========================================================================== */
+#startpage h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+#recipes {
+    display: flex;
+    flex-wrap: wrap;
+    margin: var(--size-32) 0;
+    justify-content: space-between;
+    word-wrap: break-word;
+}
+
+#startpage #recipes  {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.show-random-recipe {
+    margin-top: auto;
+    justify-content: center;
+}
+
+.show-random-recipe .recipe {
+    width: auto;
+}
+
+.recipe {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--green-pistachio);
+    margin: var(--size-8);
+    padding: var(--size-16);
+    box-shadow: 0 var(--size-8) var(--size-8) rgba(0, 0, 0, 0.1);
+    border-radius: var(--size-8);
+    text-align: center;
+}
+
+.recipe h3 {
+    margin-top: 0;
+}
+
+.recipe p {
+    margin: 0;
+}
+
+.recipe p:last-of-type {
+    margin-bottom: var(--size-16);
+}
+
+/* Recipe links */
+.recipe a {
+    color: var(--green-dark);
+}
+
+.recipe a:after {
+    content: ">"; /* This is the arrow that appears after the link */
+    position: relative;
+    display: inline-block;
+    -webkit-transform: scale(0.5, 1);
+    -moz-transform: scale(0.5, 1);
+    -o-transform: scale(0.5, 1);
+    -ms-transform: scale(0.5, 1);
+    transform: scale(0.5, 1);
+    margin-left: var(--size-8);
+}
+
+/* Recipe footer */
+.recipe footer {
+    margin-top: auto;
+}
+
+.button-recipe {
+    display: block;
+    background-color: var(--green-dark);
+    padding: var(--size-8) var(--size-32);
+    border: none;
+    border-radius: var(--size-8);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.25s ease-in-out;
+}
+
+a.button-recipe {
+    color: white;
+    text-decoration: none;
+}
+
+.button-recipe:hover {
+    background-color: var(--green-avocado);
+}
+
+a.button-recipe:hover {
+    color: black;
+}
+
+/* SEARCH AND FILTER ========================================================================== */
+#find-recipe h2 {
+    text-align: center;
+}
+
+#find-recipe .text-section {
+    text-align: center;
+    background-color: var(--green-pistachio);
+    margin: var(--size-8);
+    padding: var(--size-16);
+    box-shadow: 0 var(--size-8) var(--size-8) rgba(0, 0, 0, 0.1);
+    border-radius: var(--size-8);
+}
+
+#search-filters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#search {
+    width: 100%;
+    padding: var(--size-8);
+    margin-bottom: var(--size-8);
+    border: none;
+    border-radius: var(--size-8);
+    text-align: center;
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    background: white;
+    border-radius: var(--size-8);
+}
+
+#filters > * {
+    padding: var(--size-8);
+    cursor: pointer;
+}
+
+#filters select {
+    border: none;
+}
+
+/* FOOTER ========================================================================== */
+footer#footer {
+    margin-top: auto;
+    text-align: center;
+    padding: var(--size-8) 0;
+    background-color: var(--green-dark);
+    color: white;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+}
+
+footer#footer p {
+    font-size: 1.4rem;
+}
+
+footer#footer .footer-logo {
+    display: flex;
+    justify-content: center;
+}
+
+footer#footer .footer-logo img {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--size-4);
+}
+
+footer#footer a {
+    color: var(--green-pistachio);
+}
+
+/* FORM ========================================================================== */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--green-pistachio);
+    margin: var(--size-8);
+    padding: var(--size-16);
+    box-shadow: 0 var(--size-8) var(--size-8) rgba(0, 0, 0, 0.1);
+    border-radius: var(--size-8);
+    text-align: center;
+}
+
+#contact-form label,
+#contact-form button {
+    margin-top: var(--size-8);
+}
+
+#contact-form button {
+    display: block;
+    background-color: var(--green-dark);
+    color: white;
+    padding: var(--size-8) var(--size-32);
+    border: none;
+    border-radius: var(--size-8);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.25s ease-in-out;
+}
+
+#contact-form button:hover {
+    background-color: var(--green-avocado);
+    color: black;
+}
+
+
+/* ABOUT US AND NORTH MACEDONIA ========================================================================== */
+#about-us main,
+#north-macedonia main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--green-pistachio);
+    margin: var(--size-8) auto;
+    /* padding: var(--size-16); */
+    box-shadow: 0 var(--size-8) var(--size-8) rgba(0, 0, 0, 0.1);
+    border-radius: var(--size-8);
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aside img,
+.aside article {
+    padding: 0 var(--size-16);
+}
+
+.aside img {
+    width: 150px;
+    height: 152px;
+    border-radius: 50%;
+}
+
+.text-section {
+    padding: 0 var(--size-16);
+}
+
+table {
+    margin-bottom: var(--size-16);
+    font-size: 1.4rem;
+}
+
+table,
+tbody,
+thead {
+    overflow-x: hidden;
+}
+
+table th, td {
+    border: 1px solid black;
+}
+
+table tr:nth-child(even){
+    background-color: white;
+}
+
+table th {
+    padding-top: var(--size-16);
+    padding-bottom: var(--size-16);
+    text-align: left;
+    background-color: var(--green-dark);
+    color: white;
+}
+
+/* SPINNER ========================================================================== */
+.spinner {
+    width: var(--size-32);
+    height: var(--size-32);
+    border: var(--size-8) solid white;
+    border-top: var(--size-8) solid var(--green-moss);
+    border-radius: 50%;
+    margin: 0;
+    position: absolute;
+    top: calc(50% - var(--size-32)); /* This is to center the spinner vertically based on the spinner's height */
+    left: calc(50% - var(--size-32)); /* This is to center the spinner horizontally based on the spinner's width */
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* MEDIA QUERIES ========================================================================== */
+/* Media queries for the width of main, the pixel values are inspired by the container widths used in the framework Bootstrap */
+/* Read more: https://getbootstrap.com/docs/5.0/layout/containers/ */
+@media (min-width: 576px) {
+    main {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        max-width: 720px;
+    }
+
+    #startpage h2 {
+        font-size: 3rem;
+    }
+
+    #main-menu a {
+        font-size: 1.6rem;
+    }
+
+    .recipe {
+        width: 304px;
+    }
+
+    table th, td {
+        padding: var(--size-8);
+    }
+}
+
+@media (min-width: 992px) {
+    main {
+        max-width: 960px;
+    }
+
+    .recipe {
+        width: 416px;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        max-width: 1140px;
+    }
+    header {
+        flex-direction: row;
+        padding: 0 var(--size-32);
+    }
+
+    header a.header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+
+    #main-menu {
+        margin-left: auto;
+    }
+
+    #main-menu a {
+        font-size: 1.8rem;
+        padding: var(--size-16) var(--size-32);
+    }
+
+    #startpage h2 {
+        font-size: 4.6rem;
+    }
+
+    #recipes {
+        justify-content: left;
+    }
+
+    .recipe {
+        width: 331px;
+    }
+
+    .aside {
+        flex-direction: row;
+    }
+
+    .aside img {
+        width: 300px;
+        height: 304px;
+    }
+
+    table {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    main {
+        max-width: 1320px;
+    }
+
+    .recipe {
+        width: 392px;
+    }
+}

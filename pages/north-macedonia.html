@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- The value of the lang attribute sets the page language to English -->
+<html lang="en">
+    <head>
+        <!-- Set the character encoding to UTF-8 -->
+        <meta charset="UTF-8">
+        <!-- Sets viewport to 100% of the viewport width and zoom level to default (1.0) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- The name of the author of the page (my name) -->
+        <meta name="author" content="Kristina Todevska">
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="../assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+        <link rel="manifest" href="../assets/favicon/site.webmanifest">
+        <link rel="mask-icon" href="../assets/favicon/safari-pinned-tab.svg" color="#addd7f">
+        <link rel="shortcut icon" href="../assets/favicon/favicon.ico">
+        <meta name="msapplication-TileColor" content="#addd7f">
+        <meta name="msapplication-config" content="../assets/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#addd7f">    
+        <!-- Scripts -->
+        <script src="../assets/js/index.js" type="module"></script>
+        <!-- Link to Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <title>Macedonian Food Recommender | Recommending you what dishes and desserts to eat and what beverages to drink from North Macedonia</title>
+    </head>
+    <body id="north-macedonia">
+        <header>
+            <!-- I nested the <img> elements in a <p> element as according to recommendations in lectures -->
+            <!-- I didn't use the <picture> element here since there is no need to load different sizes of the image since it's very small -->
+            <!-- The <h1> represents the main content and name of the site and there is only one per page -->
+            <a href="../index.html" title="Home" class="header">
+                <p><img src="../assets/img/logo.png" width="40" height="40" alt="Macedonian Food Recommender chilli icon logo"></p>
+                <h1>Macedonian Food Recommender</h1>
+            </a>
+            <!-- The <nav> element is used for the links that represents the global navigation -->
+            <nav id="main-menu">
+                <ul>
+                    <li><a href="find-recipe.html" title="Find recipe">Find recipe</a></li>
+                    <li><a href="north-macedonia.html" title="About North Macedonia" class="active">North Macedonia</a></li>
+                    <li><a href="about.html" title="About us">About us</a></li>
+                    <li><a href="contact.html" title="Contact us">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- I used the <main> element since this section represents the main content of the page -->
+        <main>
+            <!-- I used the generic <section> element to indicate that this is a "chapter" of the page -->
+            <section class="aside">
+                <article>
+                    <h2>The wonders of North Macedonian cuisine</h2>
+                    <h3>Fresh Ingredients</h3>
+                    <p>North Macedonian cuisine is renowned for its use of fresh, locally-sourced ingredients. Vegetables such as peppers, tomatoes, and eggplants feature prominently, often found in traditional dishes like ajvar (a red pepper and eggplant relish) and malidzano (a green pepper and eggplant spread). Dairy products, particularly feta-like sirenje cheese and tangy yogurt, play a significant role in the diet, often accompanying meals or incorporated into recipes.</p>           
+                    <h3>Meat and Main Courses</h3>
+                    <p>Meat lovers will find an array of delectable options, from succulent kebabs and grilled sausages to hearty stews like tavče gravče, a beloved bean and sausage dish. The country's Ottoman past has left its mark with popular dishes like burek, a flaky pastry filled with meat, cheese, or spinach, and baklava, a sweet, nut-filled dessert.</p>
+                    <h3>Herbs, Spices, and Beverages</h3>
+                    <p>Herbs and spices such as paprika, garlic, and parsley infuse dishes with robust flavors, while wines and rakija (a potent fruit brandy) from the country's fertile vineyards add a celebratory touch to meals.</p>
+                    <p>Whether savoring a simple, rustic meal or indulging in a festive feast, North Macedonian cuisine offers a culinary journey full of rich tastes and warm hospitality. Explore the diverse and delicious recipes that make North Macedonia's food culture truly special.</p>    
+                </article>
+                <aside>
+                    <picture>
+                        <source srcset="../assets/img/about-macedonian-food_300x304.jpg" media="(min-width: 1200px)">
+                        <img src="../assets/img/about-macedonian-food_150x152.jpg" alt="Our team of four people smiling outside wearing sunglasses" width="150" height="152">
+                    </picture>
+                </aside>
+            </section>
+            <hr>
+            <section class="text-section" id="types-of-dishes">
+                <article>
+                    <h2>Common types of dishes</h2>
+                    <p>The table provides a brief description of different types of traditional North Macedonian dishes. It includes the English name of each dish, its name in Macedonian (Cyrillic), and a short explanation of what the dish typically includes.</p>
+                    <table>       
+                        <thead>
+                            <tr>
+                                <th>Type of Dish</th>
+                                <th>Name in Cyrillic</th>
+                                <th>Explanation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Salad</td>
+                                <td>Салата</td>
+                                <td>A mix of fresh vegetables, sometimes with added cheese, olives, or dressing. Popular salads include Shopska salad and Macedonian eggplant salad.</td>
+                            </tr>
+                            <tr>
+                                <td>Pie</td>
+                                <td>Пита</td>
+                                <td>A baked dish usually made with layers of dough and various fillings like spinach, cheese, or meat. Common examples are "burek" and "zelnik."</td>
+                            </tr>
+                            <tr>
+                                <td>Dolma</td>
+                                <td>Долма</td>
+                                <td>Vegetables (like peppers, zucchini, or grape leaves) stuffed with a mixture of rice, minced meat, and spices. Often served with a dollop of yogurt.</td>
+                            </tr>
+                            <tr>
+                                <td>Casserole</td>
+                                <td>Тава</td>
+                                <td>A hearty dish cooked slowly in the oven, typically made with meat, vegetables, and legumes. A well-known Macedonian casserole is "Tavche Gravche," a baked bean dish.</td>
+                            </tr>
+                            <tr>
+                                <td>Soup</td>
+                                <td>Супа</td>
+                                <td>A liquid food made with meat, vegetables, and sometimes legumes or pasta. Common soups include "tarator," a cold yogurt and cucumber soup, and "pilav," a rice-based soup.</td>
+                            </tr>
+                            <tr>
+                                <td>Manza</td>
+                                <td>Манџа</td>
+                                <td>A stew-like dish made with vegetables, meat, and sometimes beans. It's a comfort food that's usually served with bread.</td>
+                            </tr>
+                            <tr>
+                                <td>Bread</td>
+                                <td>Леб</td>
+                                <td>A staple food made of flour, water, and yeast. Common types include "pogacha" (a soft, round bread) and "proja" (a cornbread).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+        </main>
+        <!-- The <footer> element is placed within the body tag to apply to the whole page -->
+        <footer id="footer">
+            <p class="footer-logo"><img src="../assets/img/logo.png" width="20" height="20" alt="Macedonian Food Recommender chilli icon logo"> Macedonian Food Recommender, <span id="current-year"></span>.</p>
+            <p>Images from 
+                <a target="_blank" href="https://www.pexels.com/">Pexels</a>. 
+                <a target="_blank" href="https://icons8.com/icon/kQs5iqwxfvbp/hot-pepper">Chilli</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>.
+            </p>
+        </footer>
+    </body>
+</html>
