@@ -42,25 +42,34 @@ export default class UIHandler {
 
     // Create the searchAndFilter method and pass the data as an argument
     searchAndFilter(data) {
-        const query = document.getElementById('search').value.toLowerCase(); // Get the value of the search input field and convert it to lowercase in case user searches with uppercase letters
-        const typeOfDish = TYPE_OF_DISH_ELEM.value; // Get the value of the type of dish dropdown
-        const cookingTime = COOKING_TIME_ELEM.value; // Get the value of the cooking time dropdown
-        const vegetarian = document.getElementById('vegetarian').checked; // Get the value of the vegetarian checkbox (true or false depending on if it is checked)
-        const vegan = document.getElementById('vegan').checked; // Get the value of the vegan checkbox (true or false depending on if it is checked)
-
-        // Filter the recipes based on the search query, type of dish, cooking time, vegetarian and vegan checkboxes
-        const filteredRecipes = Object.values(data).filter(recipe => // Use Object.values to get the values of the data object (the recipes) and filter them based on the following conditions:
-            (recipe.name.toLowerCase().includes(query)) && // If the recipe name includes the search query
-            (typeOfDish === '' || recipe.type === typeOfDish) && // If the type of dish is empty OR the recipe type is the same as the type of dish
-            (cookingTime === '' || recipe.time === cookingTime) && // If the cooking time is empty OR the recipe cooking time is the same as the cooking time
-            (!vegetarian || recipe.vegetarian) && // If the vegetarian checkbox is not checked OR the recipe is vegetarian
-            (!vegan || recipe.vegan) // If the vegan checkbox is not checked OR the recipe is vegan
-        );
-
         const recipesElement = document.getElementById('recipes'); // Get the recipes element
         recipesElement.innerHTML = ''; // Clear the recipes element from any previous results
+        const query = document.getElementById('search').value.toLowerCase(); // Get the value of the search input field and convert it to lowercase in case user searches with uppercase letters
+        const chosenTypeOfDish = TYPE_OF_DISH_ELEM.value; // Get the value of the type of dish dropdown
+        const chosenCookingTime = COOKING_TIME_ELEM.value; // Get the value of the cooking time dropdown
+        const isVegetarian = document.getElementById('vegetarian').checked; // Get the value of the vegetarian checkbox (true or false depending on if it is checked)
+        const isVegan = document.getElementById('vegan').checked; // Get the value of the vegan checkbox (true or false depending on if it is checked)
 
-        // Check if there are no results
+        // Use the filter method to create a an array that just includes user filters/searches
+        const filteredRecipes = Object.values(data).filter(recipe => // Get the values of the data object (the recipes) and filter them based on the following conditions:
+            
+            // If the recipe name includes my search query
+            (recipe.name.toLowerCase().includes(query)) && 
+
+            // If there is no chosen type of dish in the dropdown OR if the recipe type is the same as the type of dish chosen
+            (chosenTypeOfDish === '' || recipe.type === chosenTypeOfDish) && 
+
+            // If there is no chosen cooking time in the dropdown OR if the recipe cooking time is the same as the cooking time chosen
+            (chosenCookingTime === '' || recipe.time === chosenCookingTime) &&
+
+            // If the vegetarian checkbox is not checked OR if the recipe is vegetarian
+            (!isVegetarian || recipe.vegetarian) && 
+
+             // If the vegan checkbox is not checked OR if the recipe is vegan
+            (!isVegan || recipe.vegan)
+        );
+
+        // Now check the results
         if (filteredRecipes.length === 0) {
             printNoResults(); // If there are no results, call the printNoResults function
         } else {
